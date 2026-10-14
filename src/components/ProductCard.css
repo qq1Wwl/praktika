@@ -1,0 +1,105 @@
+.card {
+  width: 260px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+/* Круглый значок с количеством */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 6px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #22c55e;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 16px;
+}
+
+.card-body {
+  padding: 18px;
+  text-align: center;
+}
+
+.card-title {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #1e1b4b;
+}
+
+.card-price {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #6d28d9;
+}
+
+.card-count {
+  margin: 0 0 14px;
+  color: #6b7280;
+}
+
+.btn-add {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.btn-add:hover {
+  filter: brightness(1.1);
+}
+
+.btn-add:active {
+  transform: scale(0.96);
+}
+
+.btn-reset {
+  margin-top: 8px;
+  padding: 6px;
+  border: none;
+  background: none;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.btn-reset:hover {
+  color: #ef4444;
+}
