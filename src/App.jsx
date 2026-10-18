@@ -1,23 +1,35 @@
-import ProductCard from './components/ProductCard'
-import headphones from './assets/headphones.svg'
-import watch from './assets/watch.svg'
-import backpack from './assets/backpack.svg'
-import sneaker from './assets/sneaker.svg'
-import camera from './assets/camera.svg'
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import ProtectedRoute from './components/ProtectedRoute'
+import Catalog from './pages/Catalog'
+import Cart from './pages/Cart'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Dashboard from './pages/Dashboard'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
-    <div className="app">
-      <h1 className="title">Мой магазин</h1>
+    <div>
+      <Navbar />
 
-      <div className="cards">
-        <ProductCard name="Наушники" price={4990} image={headphones} />
-        <ProductCard name="Умные часы" price={8990} image={watch} />
-        <ProductCard name="Рюкзак" price={3290} image={backpack} />
-        <ProductCard name="Кроссовки" price={6490} image={sneaker} />
-        <ProductCard name="Фотоаппарат" price={25990} image={camera} />
-      </div>
+      <main className="container">
+        <Routes>
+          <Route path="/" element={<Catalog />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
     </div>
   )
 }
